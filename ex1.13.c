@@ -23,6 +23,7 @@ main()
 		}
 		else
 			++length;
+
 	/*if last character received before EOF wasn't either a \n, \t or ' ', then you need to count the last word as well*/
 	if(length > 0 && length <=10)
 		++ndigit[length-1];
