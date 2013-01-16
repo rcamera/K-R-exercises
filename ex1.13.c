@@ -12,6 +12,7 @@ main()
 	for (i = 0; i < 10; ++i)
 		ndigit[i] = 0;
 
+	/*calculate length of each word, if length is over 10 chars, increment the last array value*/
 	while ((c = getchar()) != EOF)
 		if ((c == ' ' || c == '\n' || c == '\t') && length > 0){
 			if (length <=10)
@@ -22,19 +23,22 @@ main()
 		}
 		else
 			++length;
-
+	/*if last character received before EOF wasn't either a \n, \t or ' ', then you need to count the last word as well*/
 	if(length > 0 && length <=10)
 		++ndigit[length-1];
 	else if (length > 10)
 		++ndigit[9];
 	length = 0;
 
+	/*Calculate total number of words*/
 	for (i = 0; i < 10; ++i)
 		length = ndigit[i] + length;
 
+	/*Calculate the percentage of each word length, given the total number of words*/
 	for (i = 0; i < 10; ++i)
 		ndigit[i] = ndigit[i] / length * 100;
 	
+	/*Print horizontal histogram with # representing 5% and ] representing 2.5%*/
 	for (i = 0; i < 10; ++i){
 		if (i == 9)
 			printf("%d+: \t", i+1);
