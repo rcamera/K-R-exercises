@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define CHAR_START 32
+#define CHAR_START 33
 #define CHAR_END 126
 
 /*Print a histogram of the frequencies of characters from an input*/
